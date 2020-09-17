@@ -1,0 +1,87 @@
+﻿@model IEnumerable<RemoteServerAccess.Models.RemoteServerDetails.RSDetails>;
+@{
+    ViewData["Title"] = "RemoteServerDetails";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @*<link href="C:\Users\chourpar\source\repos\RemoteServerAccess\StyleSheet\Common.css" rel="stylesheet" />*@
+    <link href="~/css/ToggleButton.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/Common.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+    <script src="~/js/push.js"></script>
+
+</head>
+<body>
+
+
+
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Server Name</th>
+                    <th>User S</th>
+                    <th>User P</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var items in Model)
+                {
+
+                    <tr id="tableRow" data-id="@items.ID">
+                        <td>
+                            <span id="serverName">@items.ServerName</span>
+                        </td>
+                        <td>
+                            <div class="textWidth">
+                                Occupied By :
+
+                                <div id="userName">
+                                    <span id="s_user">@items.USER_S_ACCESS_BY</span>
+
+                                    <label class="switch" id="togglebtn">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <textarea id ="textArea" class="textareaWidth" placeholder="Type message here..." rows="1" cols="40"></textarea>
+                                <input type="button" class="btn btn-success btn-lg sendBtn" id="sendButton" value="Send Message" onclick="getMessage(this)"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="textWidth">
+                                Occupied By :
+                                <div id="userName">
+                                    <span id="p_user">@items.USER_P_ACCESS_BY</span>
+                                    <label class="switch" id="togglebtn">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <textarea id ="textArea" class="textareaWidth" placeholder="Type message here..." rows="1" cols="40"></textarea>
+                                <input type="button" class="btn btn-success btn-lg sendBtn" id="sendButton" value="Send Message" onclick="getMessage(this)"/>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>@Html.Hidden("CurrentUser", (object)ViewBag.currentUser)</div>
+    </div>
+
+</body>
+</html>

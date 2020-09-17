@@ -1,0 +1,25 @@
+$timeStampFormat = "yyyy-MM-dd_HH-mm"
+$backupDirUrl = 'C:\Users\chourpar\Downloads\dmp_OMS_TEST2020-06-30_10-43\dmp_OMS_TEST2020-06-30_10-43\'
+$logsDirUrl = "C:\Users\chourpar\Downloads\dmp_OMS_TEST2020-06-30_10-43\backup\logs\"
+$mongoRestoreLocation = 'C:\Program Files\MongoDB\Server\4.2\bin\mongorestore.exe'
+
+#C:\temp\backups\dmp_OMS_Test2020-02-10_16-36\OMS_Test
+
+$database = "OMS_Test"
+$server = "localhost:27017"
+#$mongouser="oms_test"
+#$mongopasswd="S0h3TbFhx8Rp"
+
+$timeStamp = get-date -format $timeStampFormat
+$backupDirName =  $backupDirUrl + $database
+$logFileNameWithTimeStamp =  $logsDirUrl + "\restore_" + $database + $timeStamp + ".log"
+
+$dumpOutput = & cmd /c $mongoRestoreLocation --drop -d $database "$backupDirName" '2>&1' | Out-String
+
+# specific collection only
+#$restoredCollection = "ideas"
+#$backupFileNameWithCollection =  $backupDirName + "\" + $restoredCollection + ".bson"
+#$dumpOutput = & cmd /c $mongoRestoreLocation -d $database --collection $restoredCollection "$backupFileNameWithCollection" '2>&1' | Out-String
+
+
+$dumpOutput >> $logFileNameWithTimeStamp 
