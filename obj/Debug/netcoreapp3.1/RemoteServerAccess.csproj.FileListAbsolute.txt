@@ -1,6 +1,5 @@
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\RemoteServerAccess.exe
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\RemoteServerAccess.deps.json
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\RemoteServerAccess.runtimeconfig.json
@@ -453,3 +452,6 @@ C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\Micros
 C:\Users\chourpar\source\repos\RemoteServerAccess\obj\Debug\netcoreapp3.1\RemoteServerAccess.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\chourpar\source\repos\RemoteServerAccess\obj\Debug\netcoreapp3.1\RemoteServerAccess.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\chourpar\source\repos\RemoteServerAccess\bin\Debug\netcoreapp3.1\Owin.dll
+C:\Users\chourpar\source\repos\RemoteServerAccess\obj\Debug\netcoreapp3.1\RemoteServerAccess.csproj.CoreCompileInputs.cache
+C:\Users\chourpar\source\repos\RemoteServerAccess\obj\Debug\netcoreapp3.1\scopedcss\bundle\RemoteServerAccess.styles.css
+C:\Users\chourpar\source\repos\RemoteServerAccess\obj\Debug\netcoreapp3.1\RemoteServerAccess.genruntimeconfig.cache
